@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  description: "This Docs for Basic Project Express Monolith"
+  version: "1.0.0"
+  title: "Basic Project Express Monolith"
+  contact:
+    email: "brtgz.id@gmail.com"
+
+paths:
+  /api:
+    get:
+      tags:
+      - "Sample Docs"
+      summary: "Sample Docs"
+      responses:
+        '200':
+          description: "Ok"
+          schema:
+            $ref: "#/definitions/sampleResponseBody"
+
+definitions:
+  sampleResponseBody:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+        example: "coming soon"

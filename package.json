@@ -1,7 +1,7 @@
 {
-  "name": "cms-prototype",
+  "name": "basic-project-express-monolith",
   "version": "1.0.0",
-  "description": "CMS Prototypr",
+  "description": "Basic Project Express Monolith",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
@@ -9,7 +9,7 @@
     "test": "LOG_LEVEL=fatal mocha ./test --recursive",
     "test:debug": "mocha --inspect-brk ./test --recursive",
     "test:coverage": "LOG_LEVEL=fatal nyc _mocha ./test --recursive",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src ./test ./config"
   },
   "keywords": [
     "cms"
@@ -18,11 +18,15 @@
   "license": "ISC",
   "dependencies": {
     "custom-error-exceptions": "^1.2.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.1.0",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
