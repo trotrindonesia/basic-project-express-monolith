@@ -1,0 +1,22 @@
+{
+  "name": "cms-prototype",
+  "version": "1.0.0",
+  "description": "CMS Prototypr",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "keywords": [
+    "cms"
+  ],
+  "author": "C.A. Sugianto",
+  "license": "ISC",
+  "dependencies": {
+    "custom-error-exceptions": "^1.2.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
