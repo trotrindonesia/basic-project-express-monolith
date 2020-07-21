@@ -4,4 +4,4 @@ const apiRouters = require('./api');
 module.exports = {
   webRouters,
   apiRouters
-}
+};

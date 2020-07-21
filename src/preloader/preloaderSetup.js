@@ -10,7 +10,6 @@ const preloaderSetup = (app) => {
   loggerLoader(app);
   routesLoader(app);
   errorHandlerLoader(app);
-
-}
+};
 
 module.exports = preloaderSetup;
