@@ -4,13 +4,13 @@
 
 Basic project for creating monolithic web app using ExpressJS & Express-Handlebars.
 
-# How To Install
+# How to install & Run this project
 ```sh
 $ git clone https://github.com/brothergiez/basic-project-express-monolith.git
 $ cd basic-project-express-monolith
-$ npm install //Installing dependencies
-$ cp .env.example .env //Copying environment variables
-$ npm run dev //run development server
+$ npm install 
+$ cp .env.example .env 
+$ npm run dev 
 ```
 
 # What's in this project?
