@@ -8,9 +8,9 @@ Basic project for creating monolithic web app using ExpressJS & Express-Handleba
 ```sh
 $ git clone https://github.com/brothergiez/basic-project-express-monolith.git
 $ cd basic-project-express-monolith
-$ npm install //Installing dependencies
-$ cp .env.example .env //Copying environment variables
-$ npm run dev //run development server
+$ npm install 
+$ cp .env.example .env 
+$ npm run dev 
 ```
 
 You can access from your browser sample of page rendered :
