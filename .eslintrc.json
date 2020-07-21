@@ -16,5 +16,13 @@
             2
         ],
         "no-unused-vars": "error"
-    }
+    },
+    "overrides": [
+        {
+            "files": ["*.spec.js"],
+            "rules": {
+                "no-unused-expressions": "off"
+            }
+        }
+    ]
 }

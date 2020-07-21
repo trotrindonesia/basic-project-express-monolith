@@ -1,14 +1,13 @@
 const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 
-const { homeHandler } = require('../../../src/handlers')
+const { homeHandler } = require('../../../src/handlers');
+
 const { expect } = chai;
 
 chai.should();
 chai.use(sinonChai);
-chai.use(chaiAsPromised);
 
 describe('homeHandler', () => {
   const sandbox = sinon.createSandbox();
@@ -42,7 +41,4 @@ describe('homeHandler', () => {
     mockResponse.send = mockResult;
     expect(mockResponse.send).to.deep.equal(mockResult);
   });
-
-
-
 });
