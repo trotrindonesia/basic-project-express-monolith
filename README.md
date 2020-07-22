@@ -1,6 +1,6 @@
 # Basic Project Express Monolith
 
-[![Code Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/brothergiez/basic-project-express-monolith) [![Code Coverage](https://img.shields.io/badge/version-v1.0.0-yellowgreenn)](https://github.com/brothergiez/basic-project-express-monolith)
+[![Coverage Status](https://coveralls.io/repos/github/brothergiez/basic-project-express-monolith/badge.svg?branch=master)](https://coveralls.io/github/brothergiez/basic-project-express-monolith?branch=master) [![Code Coverage](https://img.shields.io/badge/version-v1.0.0-yellowgreenn)](https://github.com/brothergiez/basic-project-express-monolith)
 
 Basic project for creating monolithic web app using ExpressJS & Express-Handlebars.
 
