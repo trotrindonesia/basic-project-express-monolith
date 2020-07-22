@@ -3,9 +3,12 @@ on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: node:12
     steps:
     - uses: actions/checkout@v1
     - name: installing
       run: |
-        ls -l
+        npm install,
+        cp .env.example .env
+        npm run test:coverage
+        npm run lint
