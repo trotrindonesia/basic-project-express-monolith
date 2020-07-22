@@ -8,7 +8,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: installing
       run: |
-        install,
+        cd basic-project-express-monolith
+        npm install,
         cp .env.example .env
         npm run test:coverage
         npm run lint
