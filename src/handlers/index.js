@@ -1,5 +1,7 @@
-const homeHandlers = require('./homeHandlers');
+const apiHandlers = require('./apiHandlers');
+const webHandlers = require('./webHandlers');
 
 module.exports = {
-  ...homeHandlers
+  ...apiHandlers,
+  ...webHandlers
 };

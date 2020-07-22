@@ -1,0 +1,14 @@
+name: github-pipeline
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: installing
+      run: |
+        npm install,
+        cp .env.example .env
+        npm run test:coverage
+        npm run lint

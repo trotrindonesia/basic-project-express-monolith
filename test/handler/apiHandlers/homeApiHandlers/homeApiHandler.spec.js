@@ -2,14 +2,14 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 
-const { homeHandler } = require('../../../src/handlers');
+const { homeApiHandler } = require('../../../../src/handlers');
 
 const { expect } = chai;
 
 chai.should();
 chai.use(sinonChai);
 
-describe('homeHandler', () => {
+describe('homeApiHandler', () => {
   const sandbox = sinon.createSandbox();
   let mockRequest;
   let mockResponse;
@@ -28,7 +28,7 @@ describe('homeHandler', () => {
   });
 
   it('should send function called', () => {
-    homeHandler(mockRequest, mockResponse);
+    homeApiHandler(mockRequest, mockResponse);
     expect(mockResponse.send).calledOnce;
   });
 
@@ -37,7 +37,7 @@ describe('homeHandler', () => {
       message: 'Hallo'
     };
 
-    homeHandler(mockRequest, mockResponse);
+    homeApiHandler(mockRequest, mockResponse);
     mockResponse.send = mockResult;
     expect(mockResponse.send).to.deep.equal(mockResult);
   });

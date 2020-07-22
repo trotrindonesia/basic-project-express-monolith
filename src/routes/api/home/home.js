@@ -3,7 +3,7 @@ const {
   handlers: { createHandler }
 } = require('custom-error-exceptions');
 
-const { homeHandler: handler } = require('../../../handlers');
+const { homeApiHandler: handler } = require('../../../handlers');
 
 const router = express.Router();
 
