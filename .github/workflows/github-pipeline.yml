@@ -11,21 +11,21 @@ jobs:
         npm install
         cp .env.example .env
     
-    - name: Test
-      run:
-        npm run test:coverage
-      with:
-        threshold_alert: 70
-        threshold_warning: 90
+    # - name: Test
+    #   run:
+    #     npm run test:coverage
+    #   with:
+    #     threshold_alert: 70
+    #     threshold_warning: 90
 
     - name: Checking Lint
       run:
         npm run lint
     
-    # - name: Monitor coverage
-    #   uses: slavcodev/coverage-monitor-action@1.1.0
-    #   with:
-    #       github_token: ${{ secrets.GITHUB_TOKEN }}
-    #       clover_file: "logs/clover.xml"
-    #       threshold_alert: 70
-    #       threshold_warning: 90
+    - name: Monitor coverage
+      uses: slavcodev/coverage-monitor-action@1.1.0
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          clover_file: "logs/clover.xml"
+          threshold_alert: 70
+          threshold_warning: 90
