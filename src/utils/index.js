@@ -1,5 +1,1 @@
-const createWebHandler = require('./createWebHandler');
-
-module.exports = {
-  createWebHandler
-};
+module.exports = {};

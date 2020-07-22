@@ -1,6 +1,10 @@
 const express = require('express');
+const {
+  handlers: {
+    createWebHandler
+  }
+} = require('custom-error-exceptions');
 
-const { createWebHandler } = require('../../../utils');
 const { homeWebHandler: handler } = require('../../../handlers');
 
 const router = express.Router();

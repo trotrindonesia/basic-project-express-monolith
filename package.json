@@ -17,7 +17,7 @@
   "author": "C.A. Sugianto",
   "license": "ISC",
   "dependencies": {
-    "custom-error-exceptions": "^1.2.1",
+    "custom-error-exceptions": "^1.2.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
