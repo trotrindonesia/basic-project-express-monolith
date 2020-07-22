@@ -43,31 +43,6 @@ $ npm run lint
   - Test-Driven Development using Mocha, Chai, Sinon
   - NYC package for printing code coverage to html file
 
-# Code Coverage
+# Coverage Link
+https://coveralls.io/github/brothergiez/basic-project-express-monolith?branch=master
 
-File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------------------------|---------|----------|---------|---------|-------------------
-All files                             |     100 |      100 |     100 |     100 |                   
- handlers/apiHandlers/homeApiHandlers |     100 |      100 |     100 |     100 |                   
-  homeApiHandler.js                   |     100 |      100 |     100 |     100 |                   
- handlers/webHandlers/homeWebHandlers |     100 |      100 |     100 |     100 |                   
-  homeWebHandler.js                   |     100 |      100 |     100 |     100 |                   
- preloaders                           |     100 |      100 |     100 |     100 |                   
-  errorHandlerLoader.js               |     100 |      100 |     100 |     100 |                   
-  loggerLoader.js                     |     100 |      100 |     100 |     100 |                   
-  preloaderSetup.js                   |     100 |      100 |     100 |     100 |                   
-  routesLoader.js                     |     100 |      100 |     100 |     100 |                   
-  staticPathLoader.js                 |     100 |      100 |     100 |     100 |                   
-  swaggerUiLoader.js                  |     100 |      100 |     100 |     100 |                   
-  templateLoader.js                   |     100 |      100 |     100 |     100 |                   
- utils                                |     100 |      100 |     100 |     100 |                   
-  createWebHandler.js                 |     100 |      100 |     100 |     100 |                   
-
-
-**Coverage Summary**
-```sh
-Statements   : 100% ( 68/68 )
-Branches     : 100% ( 2/2 )
-Functions    : 100% ( 11/11 )
-Lines        : 100% ( 68/68 )
-```
