@@ -11,6 +11,8 @@
     },
     "rules": {
         "comma-dangle": ["error", "never"],
+        "no-underscore-dangle": "off",
+        "no-param-reassign": "off",
         "indent": [
             "error",
             2
