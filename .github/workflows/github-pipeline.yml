@@ -8,7 +8,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: installing
       run: |
-        npm install,
+        npm install
         cp .env.example .env
         npm run test:coverage
         npm run lint
