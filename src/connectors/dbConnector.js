@@ -1,6 +1,6 @@
 const { createConnectionString } = require('../utils');
 
-const _connectDb = async (mongodb, dbConfig, logger) => {
+const dbConnector = async (app, mongodb, dbConfig, logger) => {
   const { MongoClient } = mongodb;
   const connectionString = createConnectionString(dbConfig);
   logger.info(`connecting to: ${connectionString}...`);
@@ -9,16 +9,12 @@ const _connectDb = async (mongodb, dbConfig, logger) => {
     useNewUrlParser: true
   });
   if (client) {
-    logger.info('database connected');
+    logger.info('Database connected');
+    app.locals.mongo = {
+      db: client.db(dbConfig.database),
+      client
+    };
   }
-  return {
-    db: client.db(dbConfig.database),
-    client
-  };
-};
-
-const dbConnector = async (app, mongodb, dbConfig, logger) => {
-  app.locals.mongo = await _connectDb(mongodb, dbConfig, logger);
 };
 
 module.exports = dbConnector;
