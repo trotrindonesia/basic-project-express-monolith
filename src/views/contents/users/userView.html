@@ -1,0 +1,22 @@
+{% set title = title  %}
+{% extends '../../layouts/_layout.html' %}
+
+{% block content %}
+  <div class="container-fluid">
+  <h1>{{ title }}</h1>
+    <table class="table table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+      </tr>
+      {% for user in users %}
+        <tr>
+          <td>{{ user._id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.password }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}
