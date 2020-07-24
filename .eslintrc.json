@@ -13,6 +13,7 @@
         "comma-dangle": ["error", "never"],
         "no-underscore-dangle": "off",
         "no-param-reassign": "off",
+        "newline-per-chained-call": "off",
         "indent": [
             "error",
             2
@@ -23,7 +24,8 @@
         {
             "files": ["*.spec.js"],
             "rules": {
-                "no-unused-expressions": "off"
+                "no-unused-expressions": "off",
+                "arrow-body-style": "off"       
             }
         }
     ]

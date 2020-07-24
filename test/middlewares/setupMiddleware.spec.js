@@ -21,7 +21,11 @@ describe('setupMiddleware', () => {
   beforeEach(() => {
     app = {
       locals: {
-        mongo: sinon.stub()
+        mongo: {
+          db: {
+            collection: sinon.stub()
+          }
+        }
       }
     };
     db = randomstring.generate();

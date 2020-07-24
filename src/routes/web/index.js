@@ -1,5 +1,7 @@
 const homeRouters = require('./home');
+const userRouters = require('./users');
 
 module.exports = [
-  ...homeRouters
+  ...homeRouters,
+  ...userRouters
 ];

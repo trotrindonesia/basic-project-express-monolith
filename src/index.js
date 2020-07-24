@@ -5,11 +5,9 @@ const {
 } = require('custom-error-exceptions');
 
 const config = require('../config');
-const { setupMiddleware } = require('./middlewares');
 const { preloaderSetup } = require('./preloaders');
 
 const app = express();
-setupMiddleware(app, mongodb, config, logger);
-preloaderSetup(app);
+preloaderSetup(app, mongodb, config, logger);
 
 app.listen(config.httpPort, () => logger.info(`app running at http://localhost:${config.httpPort}`));
