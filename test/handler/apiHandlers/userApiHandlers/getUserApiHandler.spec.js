@@ -18,8 +18,8 @@ describe('getUserApiHandler', () => {
     mockRequest = sandbox.stub();
     mockResponse = {
       locals: {
-        UserDbConnector: {
-          find: async () => sinon.stub()
+        UserServices: {
+          getAllUsers: async () => sinon.stub()
         }
       },
       send: sandbox.stub()
@@ -47,7 +47,7 @@ describe('getUserApiHandler', () => {
         }
       ]
     };
-    mockResponse.locals.UserDbConnector.find = async () => mockResult;
+    mockResponse.locals.UserServices.getAllUsers = async () => mockResult;
     await getUserApiHandler(mockRequest, mockResponse);
     mockResponse.send = mockResult;
     expect(mockResponse.send).to.deep.equal(mockResult);

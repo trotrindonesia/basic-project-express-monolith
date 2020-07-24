@@ -18,8 +18,8 @@ describe('getUserWebHandler', () => {
     mockRequest = sandbox.stub();
     mockResponse = {
       locals: {
-        UserDbConnector: {
-          find: async () => sinon.stub()
+        UserServices: {
+          getAllUsers: async () => sinon.stub()
         }
       },
       render: sandbox.stub()
@@ -47,7 +47,7 @@ describe('getUserWebHandler', () => {
         }
       ]
     };
-    mockResponse.locals.UserDbConnector.find = async () => mockResult.users;
+    mockResponse.locals.UserServices.getAllUsers = async () => mockResult.users;
     await getUserWebHandler(mockRequest, mockResponse);
     mockResponse.render = mockResult;
     expect(mockResponse.render).to.deep.equal(mockResult);

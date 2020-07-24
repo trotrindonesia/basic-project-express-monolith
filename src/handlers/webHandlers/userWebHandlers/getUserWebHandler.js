@@ -1,6 +1,6 @@
 const getUserHandler = async (req, res) => {
-  const { UserDbConnector } = res.locals;
-  const users = await UserDbConnector.find();
+  const { UserServices } = res.locals;
+  const users = await UserServices.getAllUsers();
   const data = {
     title: 'User',
     users

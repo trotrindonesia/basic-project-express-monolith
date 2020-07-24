@@ -7,6 +7,7 @@ const createSetupMiddleware = (app, mongodb, config, logger) => {
   return async (req, res, next) => {
     const { db } = app.locals.mongo;
     res.locals.config = config;
+    res.locals.logger = logger;
     res.locals.UserDbConnector = new UserModel({ db });
     next();
   };

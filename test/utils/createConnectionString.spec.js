@@ -9,7 +9,7 @@ const { expect } = chai;
 chai.should();
 chai.use(sinonChai);
 
-describe('homeApiHandler', () => {
+describe('createConnectionString', () => {
   const sandbox = sinon.createSandbox();
   let config;
 
