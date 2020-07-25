@@ -1,9 +1,10 @@
-const templateLoader = require('./templateLoader');
-const staticPathLoader = require('./staticPathLoader');
-const routesLoader = require('./routesLoader');
 const loggerLoader = require('./loggerLoader');
-const errorHandlerLoader = require('./errorHandlerLoader');
+const routesLoader = require('./routesLoader');
+const sessionLoader = require('./sessionLoader');
+const templateLoader = require('./templateLoader');
 const swaggerUiLoader = require('./swaggerUiLoader');
+const staticPathLoader = require('./staticPathLoader');
+const errorHandlerLoader = require('./errorHandlerLoader');
 const setupMiddlewareLoader = require('./setupMiddlewareLoader');
 const servicesMiddlewareLoader = require('./servicesMiddlewareLoader');
 
@@ -13,12 +14,15 @@ const preloaderSetup = (params) => {
     mongodb,
     config,
     logger,
-    express
+    express,
+    cors
   } = params;
 
+  app.use(cors(config.corsOptions));
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
+  sessionLoader(app, config, logger);
   setupMiddlewareLoader(app, mongodb, config, logger);
   servicesMiddlewareLoader(app);
   staticPathLoader(app);

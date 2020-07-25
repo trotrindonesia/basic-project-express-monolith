@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+const nodeEnv = process.env.NODE_ENV;
+const httpPort = process.env.HTTP_PORT;
+
 const database = {
   instances: process.env.DB_INSTANCES,
   driver: process.env.DB_DRIVER,
@@ -9,9 +12,29 @@ const database = {
   database: process.env.DB_NAME
 };
 
+const corsOptions = {
+  exposedHeaders: ['id-token']
+};
+
+const sessionConfig = {
+  proxy: nodeEnv === 'Production' ? true : false,
+  secret: process.env.SESS_SECRET,
+  name: process.env.SESS_NAME,
+  resave: process.env.SESS_RESAVE,
+  saveUninitialized: Boolean(process.env.SESS_SAVE_UNINITIALIZED),
+  cookie: {
+    secure: nodeEnv === 'Production' ? false : false,
+    maxAge: process.env.SESS_MAX_AGE,
+    sameSite: process.env.SESS_SAME_SITE
+  }
+};
+
 const config = {
-  httpPort: process.env.HTTP_PORT,
-  database
+  httpPort,
+  nodeEnv,
+  database,
+  sessionConfig,
+  corsOptions
 };
 
 module.exports = config;

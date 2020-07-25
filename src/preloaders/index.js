@@ -5,6 +5,7 @@ const loggerLoader = require('./loggerLoader');
 const errorHandlerLoader = require('./errorHandlerLoader');
 const preloaderSetup = require('./preloaderSetup');
 const swaggerUiLoader = require('./swaggerUiLoader');
+const sessionLoader = require('./sessionLoader');
 
 module.exports = {
   staticPathLoader,
@@ -13,5 +14,6 @@ module.exports = {
   loggerLoader,
   errorHandlerLoader,
   preloaderSetup,
-  swaggerUiLoader
+  swaggerUiLoader,
+  sessionLoader
 };

@@ -3,6 +3,7 @@ const sinon = require('sinon');
 const randomstring = require('randomstring');
 
 const { preloaderSetup } = require('../../src/preloaders');
+const { nodeEnv } = require('../../config');
 
 describe('preloaderSetup', () => {
   const app = {
@@ -31,11 +32,20 @@ describe('preloaderSetup', () => {
       database: randomstring.generate(),
       username: randomstring.generate(),
       password: randomstring.generate()
-    }
+    },
+    corsOptions: sinon.stub,
+    sessionConfig: {
+      secret: 'secret',
+      resave: false,
+      saveUninitialized: true
+    },
+    nodeEnv: 'Production'
   };
   const logger = {
     info: sinon.stub()
   };
+
+  const cors = () => sinon.stub();
 
   it('it should preloaderSetup called', () => {
     const params = {
@@ -43,7 +53,8 @@ describe('preloaderSetup', () => {
       mongodb,
       config,
       logger,
-      express
+      express,
+      cors
     };
 
     preloaderSetup(params);
