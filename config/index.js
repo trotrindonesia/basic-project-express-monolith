@@ -20,12 +20,12 @@ const sessionConfig = {
   proxy: nodeEnv === 'Production' ? true : false,
   secret: process.env.SESS_SECRET,
   name: process.env.SESS_NAME,
-  resave: process.env.SESS_RESAVE,
+  resave: Boolean(process.env.SESS_RESAVE),
   saveUninitialized: Boolean(process.env.SESS_SAVE_UNINITIALIZED),
   cookie: {
     secure: nodeEnv === 'Production' ? false : false,
-    maxAge: process.env.SESS_MAX_AGE,
-    sameSite: process.env.SESS_SAME_SITE
+    maxAge: Number(process.env.SESS_MAX_AGE),
+    sameSite: Boolean(process.env.SESS_SAME_SITE)
   }
 };
 

@@ -2,7 +2,7 @@ const homeWebHandler = (req, res) => {
   const data = {
     message: 'Coming Soon!'
   };
-  res.render('web/home/index', data);
+  res.render('contents/home/index.html', data);
 };
 
 module.exports = homeWebHandler;
