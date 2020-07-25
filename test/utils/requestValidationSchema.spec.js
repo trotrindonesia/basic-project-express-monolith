@@ -2,7 +2,6 @@ const { expect } = require('chai');
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
-const randomstring = require('randomstring');
 const {
   errors: { BadRequestError }
 } = require('custom-error-exceptions');
@@ -21,8 +20,8 @@ describe('requestValidationSchema', () => {
   beforeEach(() => {
     req = {
       body: {
-        key1: "key1",
-        key2: "key2"
+        key1: 'key1',
+        key2: 'key2'
       }
     };
     res = sinon.stub();
@@ -31,7 +30,7 @@ describe('requestValidationSchema', () => {
       return {
         value: req.body,
         error: false
-      }
+      };
     };
     func = requestValidationSchema(schema);
   });
@@ -58,10 +57,10 @@ describe('requestValidationSchema', () => {
       return {
         value: req.body,
         error: true
-      }
+      };
     };
     func = requestValidationSchema(schema);
     func(req, res, next);
-    expect(next.getCall(0).returnValue).to.have.been.instanceOf(BadRequestError)
+    expect(next.getCall(0).returnValue).to.have.been.instanceOf(BadRequestError);
   });
 });
