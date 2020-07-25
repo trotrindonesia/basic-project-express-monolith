@@ -3,7 +3,6 @@ const sinon = require('sinon');
 const randomstring = require('randomstring');
 
 const { preloaderSetup } = require('../../src/preloaders');
-const { nodeEnv } = require('../../config');
 
 describe('preloaderSetup', () => {
   const app = {
