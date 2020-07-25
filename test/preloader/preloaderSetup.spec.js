@@ -6,11 +6,17 @@ const { preloaderSetup } = require('../../src/preloaders');
 
 describe('preloaderSetup', () => {
   const app = {
-    use: () => sinon.spy(),
-    set: () => sinon.spy(),
+    use: () => sinon.stub(),
+    set: () => sinon.stub(),
     engine: () => sinon.spy(),
     locals: {
       mongo: sinon.stub()
+    }
+  };
+  const express = {
+    json: () => sinon.stub(),
+    urlencoded: () => {
+      return { extended: true };
     }
   };
   const mongodb = {
@@ -32,7 +38,15 @@ describe('preloaderSetup', () => {
   };
 
   it('it should preloaderSetup called', () => {
-    preloaderSetup(app, mongodb, config, logger);
+    const params = {
+      app,
+      mongodb,
+      config,
+      logger,
+      express
+    };
+
+    preloaderSetup(params);
     expect(app.called);
   });
 });

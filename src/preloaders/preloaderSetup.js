@@ -7,7 +7,18 @@ const swaggerUiLoader = require('./swaggerUiLoader');
 const setupMiddlewareLoader = require('./setupMiddlewareLoader');
 const servicesMiddlewareLoader = require('./servicesMiddlewareLoader');
 
-const preloaderSetup = (app, mongodb, config, logger) => {
+const preloaderSetup = (params) => {
+  const {
+    app,
+    mongodb,
+    config,
+    logger,
+    express
+  } = params;
+
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
+
   setupMiddlewareLoader(app, mongodb, config, logger);
   servicesMiddlewareLoader(app);
   staticPathLoader(app);
