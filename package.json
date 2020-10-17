@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js",
+    "pm2:dev": "pm2 restart ecosystem.yml --env development -i 2",
     "test": "LOG_LEVEL=fatal mocha ./test --recursive",
     "test:debug": "mocha --inspect-brk ./test --recursive",
     "test:coverage": "LOG_LEVEL=fatal nyc _mocha ./test --recursive",

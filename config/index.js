@@ -1,4 +1,7 @@
-require('dotenv').config();
+const path = require('path');
+
+const envfile = path.join(__dirname, '../.env');
+require('dotenv').config({ path: envfile });
 
 const nodeEnv = String(process.env.NODE_ENV);
 const httpPort = String(process.env.HTTP_PORT);

@@ -1,0 +1,22 @@
+apps:
+  - script: ./src/index.js
+    name: "Monolith"
+    env:
+      HTTP_PORT: 3005
+      NODE_ENV: development
+      DB_INSTANCES: localhost:27017
+      DB_DRIVER: mongodb
+      DB_OPTIONS: ''
+      DB_USERNAME: ''
+      DB_PASSWORD: ''
+      DB_NAME: users
+      SESS_LIFETIME: 172800000
+      SESS_SECRET: 1234567890
+      SESS_NAME: sessWebApp2020
+      SESS_RESAVE: false
+      SESS_SAVE_UNINITIALIZED: true
+      SESS_SECURE: false
+      SESS_MAX_AGE: 172800000
+      SESS_SAME_SITE: true
+    env_production:
+      NODE_ENV: production
