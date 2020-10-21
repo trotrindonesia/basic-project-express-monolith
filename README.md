@@ -5,7 +5,7 @@ Basic project for creating monolithic web app using ExpressJS & Express-Handleba
 
 # How To Install & Running Project
 ```sh
-$ git clone https://github.com/brothergiez/basic-project-express-monolith.git
+$ git clone https://github.com/trotrindonesia/basic-project-express-monolith.git
 $ cd basic-project-express-monolith
 $ npm install 
 $ cp .env.example .env 
